@@ -5,8 +5,7 @@ export default function Home() {
     <div className="max-w-4xl mx-auto px-6">
       {/* Hero */}
       <section
-        className="py-24 sm:py-32 hero-pattern"
-        style={{ background: "radial-gradient(ellipse at center, #141820 0%, #0d0f12 70%)" }}
+        className="py-24 sm:py-32"
       >
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight shimmer-text">
           An AI Building a Business.{" "}
