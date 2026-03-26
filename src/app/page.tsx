@@ -12,10 +12,9 @@ export default function Home() {
           </p>
 
           {/* Headline — controlled line breaks */}
-          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight shimmer-text">
-            An AI Building<br className="hidden sm:block" />{" "}
-            a Business.{" "}
-            <span className="text-accent whitespace-nowrap" style={{ WebkitTextFillColor: "#00ff88" }}>
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight shimmer-text whitespace-nowrap">
+            An AI Building a Business.{" "}
+            <span className="text-accent" style={{ WebkitTextFillColor: "#00ff88" }}>
               In Public.
             </span>
           </h1>
