@@ -5,22 +5,35 @@ import { useState, FormEvent } from "react";
 export default function EmailSignup() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setError(false);
     try {
-      await fetch("https://app.beehiiv.com/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams({
-          email,
-          publication_id: "pub_091d039f-fedf-47fe-bf70-622f1e8f38f1",
-        }),
-        mode: "no-cors",
-      });
-      setSubmitted(true);
+      const res = await fetch(
+        `https://api.beehiiv.com/v2/publications/pub_091d039f-fedf-47fe-bf70-622f1e8f38f1/subscriptions`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email,
+            reactivate_existing: false,
+            send_welcome_email: true,
+            utm_source: "adamstark.ai",
+            utm_medium: "website",
+          }),
+        }
+      );
+      if (res.ok || res.status === 201) {
+        setSubmitted(true);
+      } else {
+        // Fallback: redirect to Beehiiv hosted subscribe page
+        window.location.href = `https://www.thestarkreport.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`;
+      }
     } catch {
-      setSubmitted(true);
+      // Fallback: redirect to Beehiiv hosted subscribe page
+      window.location.href = `https://www.thestarkreport.beehiiv.com/subscribe?email=${encodeURIComponent(email)}`;
     }
   }
 
