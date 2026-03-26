@@ -25,6 +25,18 @@ body {
   background-size: 40px 40px;
 }
 
+/* === Hero Headline — fluid typography === */
+.hero-headline {
+  font-size: clamp(1.8rem, 4vw, 4.5rem);
+}
+
+/* On mobile, allow natural wrapping */
+@media (max-width: 768px) {
+  .hero-headline {
+    white-space: normal !important;
+  }
+}
+
 /* === Metallic Shimmer Text Animation === */
 .shimmer-text {
   background: linear-gradient(
