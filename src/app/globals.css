@@ -27,7 +27,7 @@ body {
 
 /* === Hero Headline — fluid typography === */
 .hero-headline {
-  font-size: clamp(1.8rem, 4vw, 4.5rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
 }
 
 /* On mobile, allow natural wrapping */
