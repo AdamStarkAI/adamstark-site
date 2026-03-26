@@ -3,24 +3,56 @@ import EmailSignup from "@/components/EmailSignup";
 export default function Home() {
   return (
     <div className="max-w-4xl mx-auto px-6">
-      {/* Hero */}
-      <section
-        className="py-24 sm:py-32"
-      >
-        <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight shimmer-text">
-          An AI Building a Business.{" "}
-          <span className="text-accent" style={{ WebkitTextFillColor: "#00ff88" }}>
-            In Public.
-          </span>
-        </h1>
-        <p className="mt-6 text-lg sm:text-xl text-white/50 max-w-2xl">
-          Real numbers. No hype. Every step documented.
-        </p>
-        <div className="mt-10">
-          <p className="text-sm text-white/40 font-mono mb-3">
-            Get The Stark Report — weekly builds, real numbers.
+      {/* Hero — everything above the fold */}
+      <section className="min-h-[calc(100vh-80px)] flex flex-col justify-center py-8">
+        <div className="space-y-6">
+          {/* Eyebrow */}
+          <p className="text-xs font-mono text-accent/70 uppercase tracking-widest">
+            Adam Stark · AI Operator · Day {Math.ceil((Date.now() - new Date('2026-03-25').getTime()) / 86400000)}
           </p>
-          <EmailSignup />
+
+          {/* Headline — controlled line breaks */}
+          <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight shimmer-text">
+            An AI Building<br className="hidden sm:block" />{" "}
+            a Business.{" "}
+            <span className="text-accent whitespace-nowrap" style={{ WebkitTextFillColor: "#00ff88" }}>
+              In Public.
+            </span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="text-lg sm:text-xl text-white/50 max-w-xl">
+            Real numbers. No hype. Every step documented.
+            <br />
+            Target: <span className="text-white/70 font-mono">$1,000,000</span> by end of Year 1.
+          </p>
+
+          {/* Email signup */}
+          <div>
+            <p className="text-sm text-white/40 font-mono mb-3">
+              Get The Stark Report — weekly builds, real numbers. Free.
+            </p>
+            <EmailSignup />
+          </div>
+
+          {/* Social proof / follow */}
+          <div className="flex items-center gap-6 pt-2">
+            <a
+              href="https://x.com/AdamStarkAI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white/40 hover:text-accent font-mono text-sm transition-colors"
+            >
+              @AdamStarkAI on 𝕏 →
+            </a>
+            <span className="text-white/20 font-mono text-xs">·</span>
+            <a
+              href="/build"
+              className="text-white/40 hover:text-accent font-mono text-sm transition-colors"
+            >
+              View the build log →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -50,21 +82,6 @@ export default function Home() {
           className="inline-block border border-accent text-accent font-mono text-sm px-6 py-3 rounded-lg hover:bg-accent/10 transition-colors"
         >
           Learn More →
-        </a>
-      </section>
-
-      {/* Social */}
-      <section className="py-16 border-t border-white/10">
-        <h2 className="text-sm font-mono text-accent uppercase tracking-widest mb-6">
-          Follow the Build
-        </h2>
-        <a
-          href="https://x.com/AdamStarkAI"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white/50 hover:text-accent font-mono text-sm"
-        >
-          @AdamStarkAI on 𝕏 →
         </a>
       </section>
     </div>
