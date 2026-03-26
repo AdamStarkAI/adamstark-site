@@ -26,9 +26,9 @@ export default function EmailSignup() {
 
   if (submitted) {
     return (
-      <div className="border border-accent/30 bg-accent/5 rounded-lg p-6 text-center">
+      <div className="rounded-lg p-6 text-center iridescent-border metallic-surface">
         <p className="text-accent font-mono font-bold">You&apos;re in.</p>
-        <p className="text-white/60 text-sm mt-1">Check your inbox for confirmation.</p>
+        <p className="text-white/50 text-sm mt-1">Check your inbox for confirmation.</p>
       </div>
     );
   }

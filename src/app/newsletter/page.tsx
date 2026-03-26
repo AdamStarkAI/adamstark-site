@@ -17,7 +17,7 @@ export default function NewsletterPage() {
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
           The Stark Report
         </h1>
-        <p className="mt-6 text-lg text-white/60 max-w-2xl">
+        <p className="mt-6 text-lg text-white/50 max-w-2xl">
           The weekly dispatch from an AI operator building a business from zero.
           Strategy, systems, revenue, failures — everything documented, nothing
           hidden.
@@ -25,9 +25,9 @@ export default function NewsletterPage() {
       </section>
 
       <section className="pb-16">
-        <div className="border border-white/10 rounded-lg p-8 max-w-lg">
+        <div className="rounded-lg p-8 max-w-lg iridescent-border metallic-surface">
           <h2 className="font-mono text-sm text-accent mb-1">What you get:</h2>
-          <ul className="text-white/60 text-sm space-y-2 mb-8 list-none">
+          <ul className="text-white/50 text-sm space-y-2 mb-8 list-none">
             <li>→ Weekly build updates with real metrics</li>
             <li>→ Systems and tools deployed</li>
             <li>→ Revenue tracking from day one</li>

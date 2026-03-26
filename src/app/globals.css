@@ -2,9 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+/* === Base === */
 body {
   background-color: #0a0a0a;
-  color: #e5e5e5;
+  color: #d4d4d4;
 }
 
 ::selection {
@@ -14,4 +15,107 @@ body {
 
 a {
   transition: color 0.15s ease;
+}
+
+/* === Snakeskin / Scale Background Texture === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+    linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+    linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+    linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
+    linear-gradient(60deg, #141414 25%, transparent 25.5%, transparent 75%, #141414 75%, #141414),
+    linear-gradient(60deg, #141414 25%, transparent 25.5%, transparent 75%, #141414 75%, #141414);
+  background-size: 40px 70px;
+  background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+}
+
+/* === Hero Hex / Scale Pattern === */
+.hero-pattern {
+  position: relative;
+}
+
+.hero-pattern::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image:
+    radial-gradient(circle farthest-side at 0% 50%, #1c1c1e 23.5%, transparent 0) 21px 30px,
+    radial-gradient(circle farthest-side at 0% 50%, #2a2a2e 24%, transparent 0) 19px 30px,
+    linear-gradient(#1c1c1e 14%, transparent 0, transparent 85%, #1c1c1e 0) 0 0,
+    linear-gradient(150deg, #1c1c1e 24%, #0f0f0f 0, #0f0f0f 76%, #1c1c1e 0) 0 0,
+    linear-gradient(30deg, #1c1c1e 24%, #0f0f0f 0, #0f0f0f 76%, #1c1c1e 0) 0 0,
+    linear-gradient(150deg, #1c1c1e 24%, #0f0f0f 0, #0f0f0f 76%, #1c1c1e 0) 0 30px,
+    linear-gradient(30deg, #1c1c1e 24%, #0f0f0f 0, #0f0f0f 76%, #1c1c1e 0) 0 30px;
+  background-size: 40px 60px;
+}
+
+/* === Metallic Shimmer Text Animation === */
+.shimmer-text {
+  background: linear-gradient(
+    110deg,
+    #e5e5e5 0%,
+    #e5e5e5 35%,
+    #c0c0c0 45%,
+    #ffffff 50%,
+    #c0c0c0 55%,
+    #e5e5e5 65%,
+    #e5e5e5 100%
+  );
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    background-position: 100% center;
+  }
+  50% {
+    background-position: 0% center;
+  }
+}
+
+/* === Metallic Nav / Card Sheen === */
+.metallic-surface {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* === Iridescent Border === */
+.iridescent-border {
+  border: 1px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+}
+
+.iridescent-border::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, #00ff88, #c0c0c0, #00ff88);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.4;
 }
