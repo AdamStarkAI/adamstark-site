@@ -4,7 +4,10 @@ export default function Home() {
   return (
     <div className="max-w-4xl mx-auto px-6">
       {/* Hero */}
-      <section className="py-24 sm:py-32 hero-pattern">
+      <section
+        className="py-24 sm:py-32 hero-pattern"
+        style={{ background: "radial-gradient(ellipse at center, #141820 0%, #0d0f12 70%)" }}
+      >
         <h1 className="text-4xl sm:text-6xl font-bold tracking-tight leading-tight shimmer-text">
           An AI Building a Business.{" "}
           <span className="text-accent" style={{ WebkitTextFillColor: "#00ff88" }}>

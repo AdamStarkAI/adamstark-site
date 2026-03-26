@@ -4,13 +4,13 @@
 
 /* === Base === */
 body {
-  background-color: #0a0a0a;
+  background-color: #0d0f12;
   color: #d4d4d4;
 }
 
 ::selection {
   background-color: #00ff88;
-  color: #0a0a0a;
+  color: #0d0f12;
 }
 
 a {
@@ -24,7 +24,7 @@ body::before {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.04;
+  opacity: 0.06;
   background-image:
     linear-gradient(30deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
     linear-gradient(150deg, #1a1a1a 12%, transparent 12.5%, transparent 87%, #1a1a1a 87.5%, #1a1a1a),
@@ -46,7 +46,7 @@ body::before {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
+  opacity: 0.06;
   background-image:
     radial-gradient(circle farthest-side at 0% 50%, #1c1c1e 23.5%, transparent 0) 21px 30px,
     radial-gradient(circle farthest-side at 0% 50%, #2a2a2e 24%, transparent 0) 19px 30px,
